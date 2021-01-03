@@ -1,0 +1,52 @@
+<html>
+<head>
+<link href="styles.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="Chart1.js"></script>
+<script type="text/javascript" src="Chart2.js"></script>
+<script type="text/javascript" src="Chart3.js"></script>
+<script type="text/javascript" src="Chart4.js"></script>
+</head>
+<body>
+<h1 style="text-align: center;">Başlık</h1>
+</br></br></br></br></br></br></br></br>
+<section>
+<nav>
+</br></br></br></br>
+        <label class="seciniz" for="districts">İlçe Seçiniz:</label>
+        <select name="districts" id="districts" class="select-css">
+          <option value="seciniz">Seçiniz</option>
+          <option value="beylikduzu">Beylikdüzü</option>
+          <option value="fatih">Fatih</option>
+          <option value="kadikoy">Kadıköy</option>
+          <option value="silivri">Silivri</option>
+        </select>
+    </br></br>
+        <label for="date">Listeleme Tarih Tipini Seçiniz:</label>
+        <select id="date" class="select-css">
+          <option id="gunluk" value="gunluk">Günlük</option>
+          <option id="aylik" value="aylik">Aylık</option>
+        </select>
+</nav>
+<article>
+    <section class="graphs" style="border: 1px">
+        <nav class="graphs1" style="border: 1px solid;">
+            <div id="a_chart" class="graphs"></div>
+        </nav>
+        <article class="graphs1" style="border: 1px solid;">
+            <div id="b_chart" class="graphs"></div>
+        </article>
+    </section>
+    <section class="graphs" style="border: 1px">
+        <nav class="graphs1" style="border: 1px solid;">
+            <div id="c_chart" class="graphs"></div>
+        </nav>
+        <article class="graphs1" style="border: 1px solid;">
+            <div id="d_chart" class="graphs"></div>
+        </article>
+    </section>
+</article>
+</section>
+<p class="deneme",id="deneme"></p>
+</body>
+</html>

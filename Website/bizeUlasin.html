@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+  <meta name="author" content="">
+  <title>İZMAKO</title>
+    <link rel="shortcut icon" href="images/logo.png" />
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Fontawesome CSS -->
+	<link href="css/all.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <script>
+    $(document).ready(function(){
+      $("#submit").click(function(){
+        alert("Mesajınız başarıyla gönderildi!");
+      });
+    });
+  </script>
+</head>
+
+<style>
+  .bottomright {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  font-size: 12px;
+}
+</style>
+
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+        <img class="fLogo" src="images/logo.png" alt="logo"/>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+           <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                 <a class="nav-link active" href="index.html">Ana Sayfa</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="#">Harita</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="#">Kirlilik Grafiği</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="bizeUlasin.html">Bize Ulaşın</a>
+              </li>
+               <li class="nav-item"> 
+                 <input class="nav-search" type="text" placeholder="Arama..."><i class="fas fa-search"></i>
+              </li>
+           </ul>
+        </div>
+    </div>
+  </nav>
+    <div class="container" style="font-size: 14px;">
+      <br><br><br><br><br>
+      <h4 style="color:rgb(0, 167, 0)"><ins>Hakkımızda</ins></h4>
+      <p>Berkcan BİLÇER 192802008 (1.Öğretim)</p>
+      <p>Abdullah OBAİD 182803001 (2.Öğretim)</p>
+      <p>Mahmud Elseyyid ÖMER 192802066 (1.Öğretim)</p>
+      <p>Serkan KURT 192803016 (2.Öğretim)</p>
+      <div class="bottomright">
+        <h4 style="color:rgb(0, 167, 0)"><ins>Bize Ulaşın</ins></h3>
+        <input type="text" name="name" placeholder="İsim Soyisim"><br><br>
+        <input type="text" name="email" placeholder="E-Posta"><br><br>
+        <textarea type="text" name="message" placeholder="Mesaj" rows="5" style="width: 158px;"></textarea><br>
+        <button id="submit" type="submit" class="btn btn-success">Gönder</button>
+      </div>
+    </div>
+</body>
+</html>

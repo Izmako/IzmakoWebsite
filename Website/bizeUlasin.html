@@ -25,14 +25,9 @@
 </head>
 
 <style>
-  .bottomright {
-  position: relative;
- float:right;
- top: -200px;
-  font-size: 12px;
-}
-.footer{
-  margin-top:200px;
+ 
+.footer {
+  margin-top: 100px;
 }
 </style>
 
@@ -68,15 +63,15 @@
   </nav>
     <div class="container" style="font-size: 14px;">
       <br><br><br><br><br>
-      <h4 style="color:rgb(0, 167, 0)"><ins>Hakkımızda</ins></h4>
+      <div class= "col-6">
+      <h4 style="color:rgb(0, 167, 0) ; "><ins>Hakkımızda</ins></h4>
       <p>Berkcan BİLÇER 192802008 (1.Öğretim)</p>
       <p>Abdullah OBAİD 182803001 (2.Öğretim)</p>
       <p>Mahmud Elseyyid ÖMER 192802066 (1.Öğretim)</p>
       <p>Serkan KURT 192803016 (2.Öğretim)</p>
-
-
-
-      <div class="bottomright">
+        </div>
+      
+      <div class="bottomright col-6">
         <h4 style="color:rgb(0, 167, 0)"><ins>Bize Ulaşın</ins></h3>
         <input type="text" name="name" placeholder="İsim Soyisim"><br><br>
         <input type="text" name="email" placeholder="E-Posta"><br><br>
@@ -84,7 +79,7 @@
         <button id="submit" type="submit" class="btn btn-success">Gönder</button>
       </div>
     </div>
-
+    
     <!--footer starts from here-->
     <footer class="footer">
       <div class="container bottom_border">
@@ -128,9 +123,7 @@
   </footer>
   
 <!-- Bootstrap core JavaScript -->
-
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

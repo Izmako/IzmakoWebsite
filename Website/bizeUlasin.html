@@ -26,10 +26,13 @@
 
 <style>
   .bottomright {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
+  position: relative;
+ float:right;
+ top: -200px;
   font-size: 12px;
+}
+.footer{
+  margin-top:200px;
 }
 </style>
 
@@ -70,6 +73,9 @@
       <p>Abdullah OBAİD 182803001 (2.Öğretim)</p>
       <p>Mahmud Elseyyid ÖMER 192802066 (1.Öğretim)</p>
       <p>Serkan KURT 192803016 (2.Öğretim)</p>
+
+
+
       <div class="bottomright">
         <h4 style="color:rgb(0, 167, 0)"><ins>Bize Ulaşın</ins></h3>
         <input type="text" name="name" placeholder="İsim Soyisim"><br><br>
@@ -78,5 +84,53 @@
         <button id="submit" type="submit" class="btn btn-success">Gönder</button>
       </div>
     </div>
+
+    <!--footer starts from here-->
+    <footer class="footer">
+      <div class="container bottom_border">
+          <div class="row">
+             <div class="col-lg-3 col-md-6 col-sm-6 col">
+        <h5 class="headin5_amrc col_white_amrc pt2">Bize Ulaşın</h5>
+        <!--headin5_amrc-->
+        <p><i class="fa fa-location-arrow"></i> Türkiye/İzmir </p>
+        <p><i class="fa fa-phone"></i> +90-500000000 </p>
+        <p><i class="fa fa fa-envelope"></i> info@izmako.com </p>
+             </div>
+            
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <h5 class="headin5_amrc col_white_amrc pt2">Linkler</h5>
+        <!--headin5_amrc-->
+        <ul class="footer_ul_amrc">
+            <li><a href="#">Takmımızın Hakkında </a></li>
+          <li><a href="#">Hizmetlerimiz</a></li>
+          <li><a href="#">İletişim</a></li>
+        </ul>
+                  <!--footer_ul_amrc ends here-->
+      </div>
+              <div class="footer-logo">
+      <a href="#"><img src="images/footer-logo.png" alt="" /></a>
+        </div>
+                 <!--foote_bottom_ul_amrc ends here-->
+    </div>
+          <p class="copyright text-center">TÜM HAKLARIMIZ SAKLIDIR. &copy; 2020 <a href="#">İZMAKO</a> 
+          </p>
+  </div>
+      <div class="container">
+          
+          <ul class="social_footer_ul">
+      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+          <!--social_footer_ul ends here-->
+      </div>
+  </footer>
+  
+<!-- Bootstrap core JavaScript -->
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

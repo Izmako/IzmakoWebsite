@@ -1,0 +1,69 @@
+﻿
+
+
+
+<div class="container" style="font-size: 14px;">
+    <div class="row p-5">
+        <div class="col-6">
+            <h4 style="color:rgb(0, 167, 0) ; "><ins>Hakkımızda</ins></h4>
+            <p>Berkcan BİLÇER 192802008 (1.Öğretim)</p>
+            <p>Abdullah OBAİD 182803001 (2.Öğretim)</p>
+            <p>Mahmud Elseyyid ÖMER 192802066 (1.Öğretim)</p>
+            <p>Serkan KURT 192803016 (2.Öğretim)</p>
+
+            <h3 style="color:rgb(0, 167, 0)">  <ins>Bize Ulaşın</ins></h3>
+            <form method="post">
+                <input class="form-group" type="text" name="name" placeholder="İsim " />
+                <input class="form-group" type="text" name="name" placeholder="Soyisim" /><br>
+                <input class="form-group" type="text" name="email" placeholder="E-Posta" /><br><br>
+                <textarea class="form-group" type="text" name="message" placeholder="Mesaj" rows="5" style="width: 158px;"></textarea><br>
+                <button id="submit" type="submit" class="btn btn-success">Gönder</button>
+            </form>
+
+
+
+
+        </div>
+
+        <div class="col-6">
+            <h4 class="second-text text-center">Our Address</h4>
+            <div id="mapid" style="height: 342px; border:2px solid #ff8d2c">
+                <script>
+                    var mymap = L.map('mapid').setView([38.491774, 27.706417], 13);
+                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWJkdWxsYWhvYiIsImEiOiJja2pqdnpleTY1bjlzMnlsZ3Q4cms2c3F4In0.ZpEx65D0Js2seKqJ6wPurA', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        maxZoom: 18,
+                        id: 'mapbox/streets-v11',
+                        tileSize: 512,
+                        zoomOffset: -1,
+                        accessToken: 'your.mapbox.access.token'
+                    }).addTo(mymap);
+                    var marker = L.marker([38.491774, 27.706417]).addTo(mymap);
+                    marker.bindPopup("<b>Bizim Adresimiz Bu</b><br>Açık 9AM-10AM -Except Cumartesi & Pazar.").openPopup();
+
+                </script>
+
+
+
+            </div>
+
+        </div>
+
+        <script type="text/javascript" charset="utf-8">
+            (function (w, d, t, f) {
+                w[f] = w[f] || function (c, k, n) {
+                    s = w[f], k = s['k'] = (s['k'] || (k ? ('&k=' + k) : '')); s['c'] =
+                        c = (c instanceof Array) ? c : [c]; s['n'] = n = n || 0; L = d.createElement(t), e = d.getElementsByTagName(t)[0];
+                    L.async = 1; L.src = '//feed.aqicn.org/feed/' + (c[n].city) + '/' + (c[n].lang || '') + '/feed.v1.js?n=' + n + k;
+                    e.parentNode.insertBefore(L, e);
+                };
+            })(window, document, 'script', '_aqiFeed');
+        </script>
+        <span id="city-aqi-container"></span>
+
+        <script type="text/javascript" charset="utf-8">
+            _aqiFeed({ container: "city-aqi-container", city: "Istanbul" });
+        </script>
+    </div>
+    
+</div>

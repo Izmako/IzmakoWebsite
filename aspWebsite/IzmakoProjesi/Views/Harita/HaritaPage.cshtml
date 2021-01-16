@@ -1,0 +1,55 @@
+﻿
+
+
+    
+    <div class="row justify-content-center p-5">
+      
+            <div class="col-3">  <h2 class="textMain">Harita Sayfasi</h2></div>
+            <div class="col-6">
+                <p style="color:#2c5163 ; font-size: 18px">Hava Kirlilik Grafikleri görmek için</p>
+                <button class="btn btn-success w-50">Buraya Tıklayın</button>
+            </div>
+
+</div>
+
+    <div id='map' style='height:800px; width:auto ; margin:50px'>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+
+        <script>
+            var OSM_URL = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+            var OSM_ATTRIB = '&copy;  <a  href="http://openstreetmap.org/copyright">OpenStreetMap</a>  contributors';
+            var osmLayer = L.tileLayer(OSM_URL, { attribution: OSM_ATTRIB });
+
+            var WAQI_URL = "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=137ce13396df422627e45dd29e1c3dd955bbcc00";
+            var WAQI_ATTR = 'Air  Quality  Tiles  &copy;  <a  href="http://waqi.info">waqi.info</a>';
+            var waqiLayer = L.tileLayer(WAQI_URL, { attribution: WAQI_ATTR });
+
+            var map = L.map('map').setView([41.055248132514485, 28.97153748864898], 11);
+            map.addLayer(osmLayer).addLayer(waqiLayer);
+        </script>
+    </div>
+
+    <div class="container">
+        <div class="row p-5">
+            <div class="col-5">
+                <h2 class="textMain">Haritayı Nasıl Ölçelendirilir?</h2>
+            </div>
+            <div class="col-7">
+                <span class="measureColorGood mainClass measureHover p-lg-2 p-sm-0  p-md-1">İyi</span>
+                <span class="measureColorModerate mainClass p-lg-2  p-sm-0 p-md-1">Orta</span>
+                <span class="measureColorUnhealthyN mainClass p-lg-2 p-sm-0 p-md-1">Sağlıksız hassas gruplar için</span>
+                <span class="measureColorUnhealthy mainClass p-lg-2 p-sm-0 p-md-1">Sağlıksız</span>
+                <span class="measureColorVeryUnhealthy mainClass p-lg-2 p-sm-0 p-md-1">Çok sağlıksız</span>
+                <span class="measureColorVeryHazardous mainClass p-lg-2 p-sm-0 p-md-1">Tehlikeli</span>
+            </div>
+
+        </div>
+
+        <div class="border text-center p-3" style="color:#2c5163">
+            <h2>Daha Fazla İçin Lütfen Oturum Aç</h2>
+            <a class="btn btn-success w-25" href="../Identity/Account/Login"> Oturum Aç</a>
+        </div>   
+
+
+    </div>

@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta http-equiv="Access-Control-Allow-Origin:*,*">
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
@@ -76,6 +77,8 @@
         </select>
     </br></br>
     <script>
+
+
         function a(){
             var t;
             if(document.getElementById("date").value==4)
@@ -120,7 +123,7 @@
          var script = document.createElement('script');
          $.ajax({
               type : "POST",
-              url : "https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId="+id+"&StartDate="
+              url : "https://cors-anywhere.herokuapp.com/https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId="+id+"&StartDate="
                      +dateAyarlama(-6*t)+"."+monthAyarlama(-6*t)+"."+yearAyarlama(-6*t)+"%2000:00:00&EndDate="+dateAyarlama(0)+"."+monthAyarlama(0)+"."+yearAyarlama(0)+"%2000:00:00",
               dataType : "json",
              success: function (result, status, xhr){
@@ -207,7 +210,7 @@
          var script = document.createElement('script');
          $.ajax({
               type : "POST",
-              url : "https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId="+id+"&StartDate="
+              url : "https://cors-anywhere.herokuapp.com/https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId="+id+"&StartDate="
                      +dateAyarlama(-6*t)+"."+monthAyarlama(-6*t)+"."+yearAyarlama(-6*t)+"%2000:00:00&EndDate="+dateAyarlama(0)+"."+monthAyarlama(0)+"."+yearAyarlama(0)+"%2000:00:00",
               dataType : "json",
              success: function (result, status, xhr){
@@ -294,10 +297,10 @@
          var script = document.createElement('script');
          $.ajax({
               type : "POST",
-              url : "https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId="+id+"&StartDate="
+              url : "https://cors-anywhere.herokuapp.com/https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId="+id+"&StartDate="
                      +dateAyarlama(-6*t)+"."+monthAyarlama(-6*t)+"."+yearAyarlama(-6*t)+"%2000:00:00&EndDate="+dateAyarlama(0)+"."+monthAyarlama(0)+"."+yearAyarlama(0)+"%2000:00:00",
               dataType : "json",
-             success: function (result, status, xhr){
+             success: function (result, status,xhr){
                  google.charts.load('current', {'packages':['corechart']});
     var i=0;
     while(i<145*t)
@@ -381,7 +384,7 @@
          var script = document.createElement('script');
          $.ajax({
               type : "POST",
-              url : "https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId="+id+"&StartDate="
+              url : "https://cors-anywhere.herokuapp.com/https://api.ibb.gov.tr/havakalitesi/OpenDataPortalHandler/GetAQIByStationId?StationId="+id+"&StartDate="
                      +dateAyarlama(-6*t)+"."+monthAyarlama(-6*t)+"."+yearAyarlama(-6*t)+"%2000:00:00&EndDate="+dateAyarlama(0)+"."+monthAyarlama(0)+"."+yearAyarlama(0)+"%2000:00:00",
               dataType : "json",
              success: function (result, status, xhr){

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fontawesome CSS -->
+    <link href="/css/all.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet">
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - IzmakoProjesi</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav ">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img class="fLogo" src="~/images/logo.png" alt="logo" />
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fas fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-controller="Main" asp-action="mainPage">Ana Sayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Harita" asp-action="HaritaPage">Harita</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Grafik" asp-action="GraphicPage">Kirlilik Grafiği</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="BizeUlasin" asp-action="BizeUlasin">Bize Ulaşın</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Bize Ulaşın</h5>
+                    <!--headin5_amrc-->
+                    <p><i class="fa fa-location-arrow"></i> Türkiye/İzmir </p>
+                    <p><i class="fa fa-phone"></i> +90-500000000 </p>
+                    <p><i class="fa fa fa-envelope"></i> info@izmako.com </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Linkler</h5>
+                    <!--headin5_amrc-->
+                    <ul class="footer_ul_amrc">
+                        <li><a href="#">Takmımızın Hakkında </a></li>
+                        <li><a href="#">Hizmetlerimiz</a></li>
+                        <li><a href="#">İletişim</a></li>
+                    </ul>
+                    <!--footer_ul_amrc ends here-->
+                </div>
+                <div class="footer-logo">
+                    <a href="#"><img src="~/images/footer-logo.png" alt="" /></a>
+                </div>
+                <!--foote_bottom_ul_amrc ends here-->
+            </div>
+            <p class="copyright text-center">
+                TÜM HAKLARIMIZ SAKLIDIR. &copy; 2020 <a href="#">İZMAKO</a>
+            </p>
+        </div>
+        <div class="container">
+
+            <ul class="social_footer_ul">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+            <!--social_footer_ul ends here-->
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+</body>
+</html>

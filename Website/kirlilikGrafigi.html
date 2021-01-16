@@ -12,15 +12,13 @@
 	<link href="css/all.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
 	<link href="css/style.css" rel="stylesheet">
-    
-<link href="Kirlilik Grafigi/styles.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="Kirlilik Grafigi/Chart1.js"></script>
-<script type="text/javascript" src="Kirlilik Grafigi/Chart2.js"></script>
-<script type="text/javascript" src="Kirlilik Grafigi/Chart3.js"></script>
-<script type="text/javascript" src="Kirlilik Grafigi/Chart4.js"></script>
+<script type="text/javascript" src="vendor/jquery/Chart1.js"></script>
+<script type="text/javascript" src="vendor/jquery/Chart2.js"></script>
+<script type="text/javascript" src="vendor/jquery/Chart3.js"></script>
+<script type="text/javascript" src="vendor/jquery/Chart4.js"></script>
 </head>
-<body>
+<body class="chart">
 
 <!-- Navigation -->
 <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
@@ -55,7 +53,7 @@
 
 <section style = "top : 100px ;margin-bottom : 100px ; position: relative;padding-bottom: 50px;">
     
- <nav>
+ <nav class="main">
 
         <label class="seciniz" for="districts">İlçe Seçiniz:</label>
         <select name="districts" id="districts" class="select-css">
@@ -66,13 +64,13 @@
           <option value="silivri">Silivri</option>
         </select>
     </br></br>
-        <label for="date">Listeleme Tarih Tipini Seçiniz:</label>
+        <label class="tarihTipi" for="date">Listeleme Tarih Tipini Seçiniz:</label>
         <select id="date" class="select-css">
           <option id="gunluk" value="gunluk">Günlük</option>
           <option id="aylik" value="aylik">Aylık</option>
         </select>
 </nav>
-<article>
+<article class="main">
     <section class="graphs" style="border: 1px">
         <nav class="graphs1" style="border: 1px solid;">
             <div id="a_chart" class="graphs"></div>
@@ -90,8 +88,6 @@
         </article>
     </section>
 </article>
-
-
 </section>
 <p class="deneme",id="deneme"></p>
 

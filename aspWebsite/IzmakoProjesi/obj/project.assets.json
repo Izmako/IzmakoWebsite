@@ -9067,20 +9067,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Abdullah\\.nuget\\packages\\": {}
+    "C:\\Users\\omer\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Abdullah\\OneDrive\\Desktop\\IzmakoProjesi\\IzmakoWebsite\\aspWebsite\\IzmakoProjesi\\IzmakoProjesi.csproj",
+      "projectUniqueName": "C:\\Users\\omer\\OneDrive\\سطح المكتب\\KK\\IzmakoWebsite\\aspWebsite\\IzmakoProjesi\\IzmakoProjesi.csproj",
       "projectName": "IzmakoProjesi",
-      "projectPath": "C:\\Users\\Abdullah\\OneDrive\\Desktop\\IzmakoProjesi\\IzmakoWebsite\\aspWebsite\\IzmakoProjesi\\IzmakoProjesi.csproj",
-      "packagesPath": "C:\\Users\\Abdullah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Abdullah\\OneDrive\\Desktop\\IzmakoProjesi\\IzmakoWebsite\\aspWebsite\\IzmakoProjesi\\obj\\",
+      "projectPath": "C:\\Users\\omer\\OneDrive\\سطح المكتب\\KK\\IzmakoWebsite\\aspWebsite\\IzmakoProjesi\\IzmakoProjesi.csproj",
+      "packagesPath": "C:\\Users\\omer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\omer\\OneDrive\\سطح المكتب\\KK\\IzmakoWebsite\\aspWebsite\\IzmakoProjesi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Abdullah\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\omer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

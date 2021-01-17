@@ -43,7 +43,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav ">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav " >
             <div class="container">
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">
                     <img class="fLogo" src="~/images/logo.png" alt="logo" />
@@ -84,7 +84,7 @@
                             </li>
                             <li class="nav-item">
                                 <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Çıkış Yap</button>
                                 </form>
                             </li>
                         }

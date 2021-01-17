@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace IzmakoProjesi.Controllers
 {
-    public class MainController : Controller
+    public class HomeController : Controller
     {
-        public IActionResult mainPage()
+        public IActionResult Index()
         {
             return View();
         }

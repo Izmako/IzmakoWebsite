@@ -53,7 +53,7 @@ namespace IzmakoProjesi.Areas.Identity.Pages.Account
 
             [Required]
             [DataType(DataType.Text)]
-            [Display(Name = "SoyAdı")]
+            [Display(Name = "Soyadı")]
             public string LastName { get; set; }
 
             [Required]

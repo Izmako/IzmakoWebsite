@@ -9067,19 +9067,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Abdullah\\.nuget\\packages\\": {}
+    "C:\\Users\\berkc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Abdullah\\OneDrive\\Desktop\\Izmako\\IzmakoProjesi\\IzmakoProjesi\\IzmakoProjesi.csproj",
+      "projectUniqueName": "C:\\Users\\berkc\\Desktop\\IzmakoWebsite\\aspWebsite\\IzmakoProjesi\\IzmakoProjesi.csproj",
       "projectName": "IzmakoProjesi",
-      "projectPath": "C:\\Users\\Abdullah\\OneDrive\\Desktop\\Izmako\\IzmakoProjesi\\IzmakoProjesi\\IzmakoProjesi.csproj",
-      "packagesPath": "C:\\Users\\Abdullah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Abdullah\\OneDrive\\Desktop\\Izmako\\IzmakoProjesi\\IzmakoProjesi\\obj\\",
+      "projectPath": "C:\\Users\\berkc\\Desktop\\IzmakoWebsite\\aspWebsite\\IzmakoProjesi\\IzmakoProjesi.csproj",
+      "packagesPath": "C:\\Users\\berkc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\berkc\\Desktop\\IzmakoWebsite\\aspWebsite\\IzmakoProjesi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Abdullah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\berkc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

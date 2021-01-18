@@ -5,9 +5,6 @@
 <!-- Custom styles for this template -->
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/ChartPageStyle.css" rel="stylesheet">
-
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -130,7 +127,7 @@
                             + dateAyarlama(-6 * t) + "." + monthAyarlama(-6 * t) + "." + yearAyarlama(-6 * t) + "%2000:00:00&EndDate=" + dateAyarlama(0) + "." + monthAyarlama(0) + "." + yearAyarlama(0) + "%2000:00:00",
                         dataType: "json",
                         success: function (result, status, xhr) {
-                            google.charts.load('current', { 'packages': ['corechart'] });
+                            google.charts.load('current', { 'packages': ['corechart','line'] });
                             var i = 0;
                             while (i < 145 * t) {
                                 if (result[i]["AQI"]["PM10"] == null) {
@@ -144,24 +141,40 @@
                             function drawChart() {
 
                                 var data = google.visualization.arrayToDataTable([
-                                    ['Tarih', 'PM₁₀'],
-                                    [dateAyarlama(-6 * t) + "/" + monthAyarlama(-6 * t), result[0]["AQI"]["PM10"]],
-                                    [dateAyarlama(-5 * t) + "/" + monthAyarlama(-5 * t), result[24 * t]["AQI"]["PM10"]],
-                                    [dateAyarlama(-4 * t) + "/" + monthAyarlama(-4 * t), result[48 * t]["AQI"]["PM10"]],
-                                    [dateAyarlama(-3 * t) + "/" + monthAyarlama(-3 * t), result[72 * t]["AQI"]["PM10"]],
-                                    [dateAyarlama(-2 * t) + "/" + monthAyarlama(-2 * t), result[96 * t]["AQI"]["PM10"]],
-                                    [dateAyarlama(-1 * t) + "/" + monthAyarlama(-1 * t), result[120 * t]["AQI"]["PM10"]],
-                                    [dateAyarlama(0) + "/" + monthAyarlama(0 * t), result[144 * t]["AQI"]["PM10"]]
+                                    ['Tarih', 'PM₁₀','Ortalama','Hassas Gruplar İçin Tehlikeli','Sağlıksız','Aşırı Sağlıksız','Riskli'],
+                                    [dateAyarlama(-6 * t) + "/" + monthAyarlama(-6 * t),      result[0]["AQI"]["PM10"], 50, 100, 150, 200, 300],
+                                    [dateAyarlama(-5 * t) + "/" + monthAyarlama(-5 * t), result[24 * t]["AQI"]["PM10"], 50, 100, 150, 200, 300],
+                                    [dateAyarlama(-4 * t) + "/" + monthAyarlama(-4 * t), result[48 * t]["AQI"]["PM10"], 50, 100, 150, 200, 300],
+                                    [dateAyarlama(-3 * t) + "/" + monthAyarlama(-3 * t), result[72 * t]["AQI"]["PM10"], 50, 100, 150, 200, 300],
+                                    [dateAyarlama(-2 * t) + "/" + monthAyarlama(-2 * t), result[96 * t]["AQI"]["PM10"], 50, 100, 150, 200, 300],
+                                    [dateAyarlama(-1 * t) + "/" + monthAyarlama(-1 * t), result[120 * t]["AQI"]["PM10"], 50, 100, 150, 200, 300],
+                                    [dateAyarlama(0) + "/" + monthAyarlama(0 * t), result[144 * t]["AQI"]["PM10"], 50, 100, 150, 200, 300]
                                 ]);
-                                var options = {
+                                var logOptions = {
+                                    hAxis: { title: "(Tarih)" },
+                                    vAxis: {
+                                        scaleType: 'log',
+                                        ticks: [0,10,30, 50, 100, 150, 200, 250, 300]
+                                    },
+                                    series: {
+                                        1: { color: "#ffff00" }, 2: { color: "#FF7F00" }, 3: { color: "red" }, 4: { color: "purple" }, 5: { color: "maroon" }
+                                    },
+                                    animation: {
+                                        startup: true,
+                                        easing: "inAndOut",
+                                        duration: 1500
+                                    },
+                                    titleTextStyle: {
+                                        fontSize: 20
+                                    },
                                     title: 'PM₁₀ Oranı (μg/m³)',
                                     curveType: 'function',
                                     legend: { position: 'none' }
                                 };
 
-                                var chart = new google.visualization.LineChart(document.getElementById('a_chart'));
+                                var logChart = new google.visualization.LineChart(document.getElementById('a_chart'));
 
-                                chart.draw(data, options);
+                                logChart.draw(data, logOptions);
                             }
                         }
 
@@ -210,7 +223,7 @@
                             + dateAyarlama(-6 * t) + "." + monthAyarlama(-6 * t) + "." + yearAyarlama(-6 * t) + "%2000:00:00&EndDate=" + dateAyarlama(0) + "." + monthAyarlama(0) + "." + yearAyarlama(0) + "%2000:00:00",
                         dataType: "json",
                         success: function (result, status, xhr) {
-                            google.charts.load('current', { 'packages': ['corechart'] });
+                            google.charts.load('current', { 'packages': ['corechart','line'] });
                             var i = 0;
                             while (i < 145 * t) {
                                 if (result[i]["AQI"]["SO2"] == null) {
@@ -225,24 +238,40 @@
                             function drawChart() {
 
                                 var data = google.visualization.arrayToDataTable([
-                                    ['Tarih', 'SO₂'],
-                                    [dateAyarlama(-6 * t) + "/" + monthAyarlama(-6 * t), result[0]["AQI"]["SO2"]],
-                                    [dateAyarlama(-5 * t) + "/" + monthAyarlama(-5 * t), result[24 * t]["AQI"]["SO2"]],
-                                    [dateAyarlama(-4 * t) + "/" + monthAyarlama(-4 * t), result[48 * t]["AQI"]["SO2"]],
-                                    [dateAyarlama(-3 * t) + "/" + monthAyarlama(-3 * t), result[72 * t]["AQI"]["SO2"]],
-                                    [dateAyarlama(-2 * t) + "/" + monthAyarlama(-2 * t), result[96 * t]["AQI"]["SO2"]],
-                                    [dateAyarlama(-1 * t) + "/" + monthAyarlama(-1 * t), result[120 * t]["AQI"]["SO2"]],
-                                    [dateAyarlama(0) + "/" + monthAyarlama(0), result[144 * t]["AQI"]["SO2"]]
+                                    ['Tarih', 'SO₂','Ortalama',],
+                                    [dateAyarlama(-6 * t) + "/" + monthAyarlama(-6 * t), result[0]["AQI"]["SO2"], 50],
+                                    [dateAyarlama(-5 * t) + "/" + monthAyarlama(-5 * t), result[24 * t]["AQI"]["SO2"], 50],
+                                    [dateAyarlama(-4 * t) + "/" + monthAyarlama(-4 * t), result[48 * t]["AQI"]["SO2"], 50],
+                                    [dateAyarlama(-3 * t) + "/" + monthAyarlama(-3 * t), result[72 * t]["AQI"]["SO2"], 50],
+                                    [dateAyarlama(-2 * t) + "/" + monthAyarlama(-2 * t), result[96 * t]["AQI"]["SO2"], 50],
+                                    [dateAyarlama(-1 * t) + "/" + monthAyarlama(-1 * t), result[120 * t]["AQI"]["SO2"], 50],
+                                    [dateAyarlama(0) + "/" + monthAyarlama(0), result[144 * t]["AQI"]["SO2"], 50]
                                 ]);
-                                var options = {
+                                var logOptions = {
+                                    series: {
+                                        1: { color: "#ffff00" }
+                                    },
+                                    hAxis: { title: "(Tarih)" },
+                                    vAxis: {
+                                        scaleType: 'log',
+                                        ticks: [0,1,2,5,10,20,50,100]
+                                    },
+                                    animation: {
+                                        startup: true,
+                                        easing: "inAndOut",
+                                        duration: 1500
+                                    },
+                                    titleTextStyle: {
+                                        fontSize:20
+                                    },
                                     title: 'SO₂ Oranı (μg/m³)',
                                     curveType: 'function',
                                     legend: { position: 'none' }
                                 };
 
-                                var chart = new google.visualization.LineChart(document.getElementById('b_chart'));
+                                var logChart = new google.visualization.LineChart(document.getElementById('b_chart'));
 
-                                chart.draw(data, options);
+                                logChart.draw(data, logOptions);
                             }
                         }
                     })
@@ -290,7 +319,7 @@
                             + dateAyarlama(-6 * t) + "." + monthAyarlama(-6 * t) + "." + yearAyarlama(-6 * t) + "%2000:00:00&EndDate=" + dateAyarlama(0) + "." + monthAyarlama(0) + "." + yearAyarlama(0) + "%2000:00:00",
                         dataType: "json",
                         success: function (result, status, xhr) {
-                            google.charts.load('current', { 'packages': ['corechart'] });
+                            google.charts.load('current', { 'packages': ['corechart','line'] });
                             var i = 0;
                             while (i < 145 * t) {
                                 if (result[i]["AQI"]["O3"] == null) {
@@ -305,24 +334,34 @@
                             function drawChart() {
 
                                 var data = google.visualization.arrayToDataTable([
-                                    ['Tarih', 'O₃'],
-                                    [dateAyarlama(-6 * t) + "/" + monthAyarlama(-6 * t), result[0]["AQI"]["O3"]],
-                                    [dateAyarlama(-5 * t) + "/" + monthAyarlama(-5 * t), result[24 * t]["AQI"]["O3"]],
-                                    [dateAyarlama(-4 * t) + "/" + monthAyarlama(-4 * t), result[48 * t]["AQI"]["O3"]],
-                                    [dateAyarlama(-3 * t) + "/" + monthAyarlama(-3 * t), result[72 * t]["AQI"]["O3"]],
-                                    [dateAyarlama(-2 * t) + "/" + monthAyarlama(-2 * t), result[96 * t]["AQI"]["O3"]],
-                                    [dateAyarlama(-1 * t) + "/" + monthAyarlama(-1 * t), result[120 * t]["AQI"]["O3"]],
-                                    [dateAyarlama(0) + "/" + monthAyarlama(0), result[144 * t]["AQI"]["O3"]]
+                                    ['Tarih', 'O₃','Ortalama','Hassas Gruplar İçin Tehlikeli','Sağlıksız','Aşırı Sağlıksız'],
+                                    [dateAyarlama(-6 * t) + "/" + monthAyarlama(-6 * t), result[0]["AQI"]["O3"], 50, 100, 150, 200],
+                                    [dateAyarlama(-5 * t) + "/" + monthAyarlama(-5 * t), result[24 * t]["AQI"]["O3"], 50, 100, 150, 200],
+                                    [dateAyarlama(-4 * t) + "/" + monthAyarlama(-4 * t), result[48 * t]["AQI"]["O3"], 50, 100, 150, 200],
+                                    [dateAyarlama(-3 * t) + "/" + monthAyarlama(-3 * t), result[72 * t]["AQI"]["O3"], 50, 100, 150, 200],
+                                    [dateAyarlama(-2 * t) + "/" + monthAyarlama(-2 * t), result[96 * t]["AQI"]["O3"], 50, 100, 150, 200],
+                                    [dateAyarlama(-1 * t) + "/" + monthAyarlama(-1 * t), result[120 * t]["AQI"]["O3"], 50, 100, 150, 200],
+                                    [dateAyarlama(0) + "/" + monthAyarlama(0), result[144 * t]["AQI"]["O3"], 50, 100, 150, 200]
                                 ]);
-                                var options = {
+                                var logOptions = {
+                                    series: {
+                                        1: { color: "#ffff00" }, 2: { color: "orange" }
+                                    },
+                                    hAxis: { title: "(Tarih)" },
+                                    vAxis: {
+                                        scaleType: 'log',
+                                        ticks: [0,5, 10, 50, 100, 150, 200,300]
+                                    },
+                                    animation: {startup: true,easing: "inAndOut",duration: 1500},
+                                    titleTextStyle: {fontSize: 20},
                                     title: 'O₃ Oranı (μg/m³)',
                                     curveType: 'function',
                                     legend: { position: 'none' }
                                 };
 
-                                var chart = new google.visualization.LineChart(document.getElementById('c_chart'));
+                                var logChart = new google.visualization.LineChart(document.getElementById('c_chart'));
 
-                                chart.draw(data, options);
+                                logChart.draw(data, logOptions);
                             }
                         }
                     })
@@ -370,7 +409,7 @@
                             + dateAyarlama(-6 * t) + "." + monthAyarlama(-6 * t) + "." + yearAyarlama(-6 * t) + "%2000:00:00&EndDate=" + dateAyarlama(0) + "." + monthAyarlama(0) + "." + yearAyarlama(0) + "%2000:00:00",
                         dataType: "json",
                         success: function (result, status, xhr) {
-                            google.charts.load('current', { 'packages': ['corechart'] });
+                            google.charts.load('current', { 'packages': ['corechart','line'] });
                             var i = 0;
                             while (i < 145 * t) {
                                 if (result[i]["AQI"]["NO2"] == null) {
@@ -384,24 +423,34 @@
                             function drawChart() {
 
                                 var data = google.visualization.arrayToDataTable([
-                                    ['Tarih', 'NO₂'],
-                                    [dateAyarlama(-6 * t) + "/" + monthAyarlama(-6 * t), result[0]["AQI"]["NO2"]],
-                                    [dateAyarlama(-5 * t) + "/" + monthAyarlama(-5 * t), result[24 * t]["AQI"]["NO2"]],
-                                    [dateAyarlama(-4 * t) + "/" + monthAyarlama(-4 * t), result[48 * t]["AQI"]["NO2"]],
-                                    [dateAyarlama(-3 * t) + "/" + monthAyarlama(-3 * t), result[72 * t]["AQI"]["NO2"]],
-                                    [dateAyarlama(-2 * t) + "/" + monthAyarlama(-2 * t), result[96 * t]["AQI"]["NO2"]],
-                                    [dateAyarlama(-1 * t) + "/" + monthAyarlama(-1 * t), result[120 * t]["AQI"]["NO2"]],
-                                    [dateAyarlama(0) + "/" + monthAyarlama(0), result[144 * t]["AQI"]["NO2"]]
+                                    ['Tarih', 'NO₂','Ortalama','Hassas Gruplar İçin Tehlikeli'],
+                                    [dateAyarlama(-6 * t) + "/" + monthAyarlama(-6 * t), result[0]["AQI"]["NO2"], 40, 80],
+                                    [dateAyarlama(-5 * t) + "/" + monthAyarlama(-5 * t), result[24 * t]["AQI"]["NO2"], 40, 80],
+                                    [dateAyarlama(-4 * t) + "/" + monthAyarlama(-4 * t), result[48 * t]["AQI"]["NO2"], 40, 80],
+                                    [dateAyarlama(-3 * t) + "/" + monthAyarlama(-3 * t), result[72 * t]["AQI"]["NO2"], 40, 80],
+                                    [dateAyarlama(-2 * t) + "/" + monthAyarlama(-2 * t), result[96 * t]["AQI"]["NO2"], 40, 80],
+                                    [dateAyarlama(-1 * t) + "/" + monthAyarlama(-1 * t), result[120 * t]["AQI"]["NO2"], 40, 80],
+                                    [dateAyarlama(0) + "/" + monthAyarlama(0), result[144 * t]["AQI"]["NO2"], 40, 80]
                                 ]);
-                                var options = {
+                                var logOptions = {
+                                    series: {
+                                        1: { color: "#ffff00" }, 2: {color:"orange"}
+                                    },
+                                    hAxis: { title: "(Tarih)" },
+                                    vAxis: {
+                                        scaleType: 'log',
+                                        ticks: [0, 10, 40, 80, 150, 200, 300, 700]
+                                    },
+                                    animation: { startup: true, easing: "inAndOut", duration: 1500 },
+                                    titleTextStyle: { fontSize: 20 },
                                     title: 'NO₂ Oranı (μg/m³)',
                                     curveType: 'function',
                                     legend: { position: 'none' }
                                 };
 
-                                var chart = new google.visualization.LineChart(document.getElementById('d_chart'));
+                                var logChart = new google.visualization.LineChart(document.getElementById('d_chart'));
 
-                                chart.draw(data, options);
+                                logChart.draw(data, logOptions);
                             }
                         }
 
@@ -413,6 +462,27 @@
                 <option id="haftalik" value="1">Son 7 Gün</option>
                 <option id="aylik" value="4">Son 28 Gün</option>
             </select>
+            <img src="~/images/GrafikPic.png" style="padding-left:100px;padding-top:30px">
+            <div style="padding-left:5%;padding-top:5%">
+                <p>
+                    <b>Partiküler Madde (PM₁₀) </b>ve çapı 10 mikrometreden küçük diğer tanecikler akciğerlere ulaşarak
+                    iltihaplanmaya ya da insanları çok olumsuz etkileyecek kalp ve akciğer hastalıklarına neden olabilirler.
+                </p>
+                <p>
+                    <b>Kükürt dioksit (SO₂) </b>insanlar için doğrudan zehirleyicidir; temel olarak solunum fonksiyonlarını
+                    etkiler. Sülfürik asit ve sülfat formuna dönüşmesi durumunda insan sağlığını dolaylı olarak tehdit edebilir.
+                </p>
+                <p>
+                    <b>Ozon gazı (O₃) </b>için Dünya Sağlık Teşkilatı tarafından insan bulunan ortamlarda miktarın 0,05 ppm’i aşmaması tavsiye edilmektedir.
+                    Bu miktarın üzerinde ozona maruz kalındığında üst solunum yollarında tahrişe rastlanabilir.
+                </p>
+                <p>
+                    <b>Azot Dioksit (NO₂)</b> fosil yakıtlarının, yani Gaz, Kömür ve Yağ’ların yanması sonucunda ortaya çıkmaktadır.
+                    Böylelikle araçların atık gazlarında ve ısınmak için kullanılan gaz ve kömürün yanmasıyla bol miktarda bu gazdan doğaya salınmaktadır.
+                    Bunların yanı sıra kâğıt üretiminin bazı safhalarında çok az olsa da NO2 gazı oluşmaktadır.<br />Azot dioksit çok zehirli bir gazdır
+                    bu yüzden düşük konsantrasyonda fark edilmesi zor olmaktadır. Bu gazın solunumu sonucunda baş ağrısı ve baş dönmesi gibi belirtileri ortaya çıkmaktadır.
+                </p>
+            </div>
         </nav>
         <article class="main">
             <section class="graphs" style="border: 1px">

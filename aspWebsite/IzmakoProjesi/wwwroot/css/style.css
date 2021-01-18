@@ -58,12 +58,12 @@ button.btn-secondary:hover{
 }
 .navbar-expand-lg.top-nav .navbar-nav .nav-link:hover{
 	background: #4eae3a;
-	color: #ffffff;
+	color: #ffffff !important;
 	border-radius: 4.8px;
 }
 .navbar-expand-lg.top-nav .navbar-nav .nav-link.active{
 	background: #4eae3a;
-	color: #ffffff;
+	color: #ffffff !important;
 	border-radius: 4.8px;
 }
 .top-nav .navbar-toggler{
@@ -293,13 +293,13 @@ button.btn-secondary {
 
 	.navbar-expand-lg.top-nav .navbar-nav .nav-link:hover {
 		background: #4eae3a;
-		color: #ffffff;
+		color: #ffffff !important;
 		border-radius: 4.8px;
 	}
 
 	.navbar-expand-lg.top-nav .navbar-nav .nav-link.active {
 		background: #4eae3a;
-		color: #ffffff;
+		color: #ffffff !important;
 		border-radius: 4.8px;
 	}
 
